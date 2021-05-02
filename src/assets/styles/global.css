@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 60%;
+    --color-background: #FAFAFA;
+    --color-background-profile: #3B4252;
+    --color-profile-info-color: #ECEFF4;
+    --color-profile-img-border: #C0CCDA;
+    --color-profile-description-color: #8190A5;
+    --color-profile-repo-description: #3B4252;
+    --color-profile-repo-text: #3B4252;
+    --color-profile-repo-status: #8190A5;
+    --color-profile-goback-background: #ECEFF4;
+    --color-profile-goback-text: #3B4252;
+    --color-repo-border: #ECEFF4;
+    --color-profile-goback: #ECEFF4;
+    --color-line-in-white: #E6E6F0;
+    --color-input-border: #47525E;
+    --color-input-placeholder: #8190A5;
+    --color-button-background: #47525E;
+    --color-label-text: #47525E;
+    --color-button-text: #ECEFF4;
+}
+
+html, body, #root {
+    height: 100vh;
+}
+
+body {
+    overflow: hidden;
+    background-color: var(--color-background);
+}
+
+body {
+    font: 300 1.6rem Lato;
+}
+
+.container {
+    width: 90vw;
+    max-width: 700px;
+}
+
+@media (min-width: 700px) {
+    :root {
+        font-size: 62.5%;
+    }
+}

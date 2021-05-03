@@ -20,7 +20,7 @@ function UserView() {
         };
 
         loadRepositories();
-    }, []);
+    });
 
     return(
         <Container>

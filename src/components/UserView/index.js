@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import UserConext from '../../context/UserContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,17 +25,20 @@ import {
     UserInfo,
     GoBackButton
  } from './styles/userview';
+import defaultImg from '../../assets/images/default_img.png';
 
 function UserView() {
 
     const history = useHistory();
 
     const { userInput, githubUser, setGithubUser, starredRepo, setStarredRepo } = useContext(UserConext);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         async function loadStarredRepositories() {
             const { data } = await api.get(`${userInput}/starred?page=1&per_page=100`);
             setStarredRepo(data); 
+            setLoading(true);
         };
 
         async function loadRepositories() {
@@ -49,7 +52,8 @@ function UserView() {
 
     return(
         <Container>
-            <UserImg src={githubUser.avatar_url} />
+            
+            <UserImg src={loading ? githubUser.avatar_url : defaultImg} />
             <UserFullName>{githubUser.name}</UserFullName>
             <UserLoginName>@{githubUser.login}</UserLoginName>
             

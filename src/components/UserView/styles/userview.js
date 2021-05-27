@@ -63,16 +63,18 @@ export const UserStatus = styled.p`
 export const UserInfoContainer = styled.div`
     margin-top: 6px;
     width: 350px;
+    display: flex;
+    flex-direction: column;
 `;
 
-export const UserInfo = styled.p`
+export const UserInfo = styled.a`
     color: var(--color-profile-info-color);
     margin-top: 9px;
     font-size: 15px;
     font-weight: 400;
     font-style: italic;
-    line-height: 26px;
-    text-align: left;
+    line-height: 20px;
+    text-decoration: none;
 `;
 
 export const GoBackButton = styled.button`

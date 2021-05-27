@@ -27,11 +27,11 @@ function UserView() {
             {loading ? repositories
                 .sort((stars1, stars2) =>  stars2.stargazers_count - stars1.stargazers_count)
                 .map(repository => {
-                    const { stargazers_count, description, name, updated_at, id } = repository;
+                    const { stargazers_count, description, name, updated_at, id, html_url } = repository;
         
                     return(
                         <RepoCard key={id}>
-                            <RepoTitle>{name}</RepoTitle>
+                            <RepoTitle href={html_url} target="_blank" rel="noopener noreferrer">{name}</RepoTitle>
                             <RepoDescription>{description}</RepoDescription>
                             <RepoStatus><FontAwesomeIcon icon={faStar}/> {stargazers_count} stars • Updated {formatUpdatedDate(updated_at)} days ago</RepoStatus>
                         </RepoCard>

@@ -26,7 +26,7 @@ import {
     GoBackButton
  } from './styles/userview';
 import defaultImg from '../../assets/images/default_img.png';
-
+import formatOrgName from "../../utils/formatOrgName";
 function UserView() {
 
     const history = useHistory();
@@ -66,7 +66,7 @@ function UserView() {
             </UserStatusContainer>
             <UserInfoContainer>
                 {githubUser.company ? 
-                    <UserInfo><FontAwesomeIcon icon={faBuilding}/> {githubUser.company}</UserInfo>
+                    <UserInfo href={`https://github.com/${formatOrgName(githubUser.company)}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faBuilding}/> {githubUser.company}</UserInfo>
                     :
                     ''
                 }
@@ -76,8 +76,8 @@ function UserView() {
                     :
                     ''
                 }
-                <UserInfo><FontAwesomeIcon icon={faLink}/> {githubUser.blog}</UserInfo>
-                <UserInfo><FontAwesomeIcon icon={faTwitter}/> {githubUser.twitter_username}</UserInfo>
+                <UserInfo href={githubUser.blog} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLink}/> {githubUser.blog}</UserInfo>
+                <UserInfo href={"https://twitter.com/" + githubUser.twitter_username} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitter}/> @{githubUser.twitter_username}</UserInfo>
             </UserInfoContainer>
             <GoBackButton onClick={() => history.push('/')}>Voltar</GoBackButton>
         </Container>

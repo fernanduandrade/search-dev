@@ -16,13 +16,14 @@ export const RepoCard = styled.div`
     border-bottom: 1px solid var(--color-repo-border);
 `;
 
-export const RepoTitle = styled.h3`
+export const RepoTitle = styled.a`
     color: var(--color-profile-repo-text);
     font-size: 24px;
     font-weight: 400;
     font-style: italic;
     width: 400px;
     text-align: left;
+    text-decoration: none;
 `;
 
 export const RepoDescription = styled.p`
